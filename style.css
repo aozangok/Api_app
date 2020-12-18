@@ -1,0 +1,113 @@
+:root {
+  --pixel-size: 8;
+}
+
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('Minecraft.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+body {
+  background: #ca3781;
+  font-family: 'MyWebFont';
+}
+
+.Character {
+  width: calc(17px * var(--pixel-size));
+  height: calc(32px * var(--pixel-size));
+  /*Bu bir sekilde secilen alan disindakileri sakliyor*/
+  overflow: hidden;
+  position: relative;
+  margin: 4em auto;
+}
+
+.Character_spritesheet {
+  animation: moveSpritesheet 1s steps(3) infinite;
+  width: calc(55px * var(--pixel-size));
+  position: absolute;
+}
+
+.pixelart {
+  image-rendering: pixelated;
+}
+@keyframes moveSpritesheet {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.face-right {
+  top: calc(-32px * var(--pixel-size));
+}
+
+.face-up {
+  top: calc(-64px * var(--pixel-size));
+}
+
+.face-left {
+  top: calc(-96px * var(--pixel-size));
+}
+
+.paragraph {
+  font-size: 50px;
+  margin: 1em auto;
+  text-align: center;
+  border: 10px solid rgb(37, 184, 37);
+  padding: 10px;
+  color: black;
+}
+
+.dropdown {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  border: 10px solid rgb(37, 184, 37);
+}
+
+.label {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  font-size: 50px;
+}
+
+.dropdownn {
+  display: inline-block;
+
+  margin-left: 15px; /* This is when the drop down box appears */
+
+  position: absolute;
+  margin: 4em 47em;
+}
+
+.bubble {
+  margin: -25em 67em;
+  position: absolute;
+  animation: 2s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0);
+  background: none;
+  cursor: pointer;
+  outline: none;
+  margin: 15em 65em;
+  padding: 0;
+  width: 20vh;
+  height: 10vh;
+}
